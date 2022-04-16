@@ -3,6 +3,7 @@ import './App.css';
 import Button from './Button'
 import QuestionSet1 from './QuestionSet1.json';
 import React, { useState } from 'react';
+import { Rating } from 'react-simple-star-rating'
 
 
 
@@ -10,6 +11,14 @@ function Set1() {
     const [count, counter] = useState(0);
     const [text, setText] = useState("next");
     const [score, setScore] = useState(0);
+    const [star, setStar] = useState(0)
+
+
+    const starHandler = (rate: number) => {
+        setStar(rate)
+
+    }
+    
 
     const nextClick = () => {
 
@@ -110,15 +119,48 @@ function Set1() {
         );
     } else {
 
-        return (
-            <div>
+        if (score / QuestionSet1.length < 0.5) {
 
-                <p >Final Score is {score}</p>
+            return (
+                <div>
 
-                <br></br>
-                <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
-            </div>
-        )
+                    <p >You have failed the quiz, please try again. </p>
+                    <p>Final Score is {score} out of {QuestionSet1.length} </p>
+                    <br></br>
+                    <div className='App'>
+                        <p>How accurate do you think this quiz has tested your research ability out of 5?</p>
+                        <Rating onClick={starHandler} ratingValue={star} />
+                    </div>
+                    <br></br>
+                    <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
+                </div>
+            )
+
+        } else {
+
+            return (
+                <div>
+
+                    <p >Congratulations. You have passed the quiz </p>
+                    <p>Final Score is {score} out of {QuestionSet1.length} </p>
+                    <br></br>
+                    <div className='App'>
+                        <p>How accurate do you think this quiz has tested your research ability out of 5?</p>
+                        <Rating onClick={starHandler} ratingValue={star} />
+                    </div>
+                    <br></br>
+
+                    <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
+
+                </div>
+            )
+
+
+
+
+        }
+
+
     }
 }
 

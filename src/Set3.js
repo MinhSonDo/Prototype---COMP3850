@@ -35,8 +35,8 @@ function Set3() {
 
         }
         if (count == QuestionSet3.length - 2) {
-           
-        }else{
+
+        } else {
             setText("next");
 
         }
@@ -45,72 +45,103 @@ function Set3() {
     }
 
     const aClick = () => {
-         
-          if(QuestionSet3[count].answers[0]==QuestionSet3[count].correct){
-              
-             setScore(score+1);
-          }
-          nextClick();
+
+        if (QuestionSet3[count].answers[0] == QuestionSet3[count].correct) {
+
+            setScore(score + 1);
+        }
+        nextClick();
 
     }
     const bClick = () => {
         console.log(QuestionSet3[count].answers[0]);
         console.log(QuestionSet3[count].correct);
-        if(QuestionSet3[count].answers[1]==QuestionSet3[count].correct){
-            console.log("working"+score);
-           setScore(score+1);
-           console.log("working"+score);
+        if (QuestionSet3[count].answers[1] == QuestionSet3[count].correct) {
+            console.log("working" + score);
+            setScore(score + 1);
+            console.log("working" + score);
         }
         nextClick();
-  }
-  const cClick = () => {
-         
-    if(QuestionSet3[count].answers[2]==QuestionSet3[count].correct){
-        
-       setScore(score+1);
     }
-    nextClick();
+    const cClick = () => {
 
-}
+        if (QuestionSet3[count].answers[2] == QuestionSet3[count].correct) {
 
-const dClick = () => {
-         
-    if(QuestionSet3[count].answers[3]==QuestionSet3[count].correct){
-        
-       setScore(score+1);
+            setScore(score + 1);
+        }
+        nextClick();
+
     }
-    nextClick();
-}
 
-const returnToMenu = () => {
+    const dClick = () => {
 
-    window.location.href='/menu';    
-}
+        if (QuestionSet3[count].answers[3] == QuestionSet3[count].correct) {
+
+            setScore(score + 1);
+        }
+        nextClick();
+    }
+
+    const returnToMenu = () => {
+
+        window.location.href = '/menu';
+    }
     if (count < QuestionSet3.length) {
         return (
 
 
             <div>
-                <p> {QuestionSet3[count].question}</p>
-                <p><button onClick={aClick}>{QuestionSet3[count].answers[0]}   </button>    </p>
-                <p> <button onClick={bClick}>{QuestionSet3[count].answers[1]} </button>     </p>
-                <p> <button onClick={cClick}> {QuestionSet3[count].answers[2]} </button>     </p>
-                <p><button onClick={dClick}> {QuestionSet3[count].answers[3]}   </button>   </p>
-                <p> Current score: {score}    </p>
-                <button onClick={nextClick}> {text}</button>
-                <button onClick={prevClick}> Previous</button>
+                <p class="title"> {QuestionSet3[count].question}</p>
+                <div class="buttons is-centered">
+                    <p><button class="button" onClick={aClick}>{QuestionSet3[count].answers[0]}   </button>    </p>
+                    <p> <button class="button" onClick={bClick}>{QuestionSet3[count].answers[1]} </button>     </p>
+                    <p> <button class="button" onClick={cClick}> {QuestionSet3[count].answers[2]} </button>     </p>
+                    <p><button class="button" onClick={dClick}> {QuestionSet3[count].answers[3]}   </button>   </p>
+                </div>
+
+                <div class="buttons is-centered">
+                    <button class="button is-success is-light" onClick={nextClick}> {text}</button>
+                    <button class="button is-success is-light" onClick={prevClick}> Previous</button>
+                </div>
+
             </div>
 
 
         );
     } else {
-       
-        return(
-        <div>
-            <p>Final Score is {score}</p>
-            <p> <button onClick={returnToMenu}>Return to Menu  </button></p>
-        </div>
+
+         if(score/QuestionSet3.length<0.5) {
+
+        return (
+            <div>
+              
+                <p >You have failed the quiz, please try again. </p>
+                <p>Final Score is {score} out of {QuestionSet3.length} </p>
+
+                <br></br>
+                <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
+            </div>
         )
+
+         }else{
+
+            return (
+                <div>
+                  
+                    <p >Congratulations. You have passed the quiz </p>
+                    <p>Final Score is {score} out of {QuestionSet3.length} </p>
+    
+                    <br></br>
+                    <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
+                </div>
+            )
+    
+
+
+
+         }
+
+
     }
 }
 
