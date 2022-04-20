@@ -5,6 +5,17 @@ import QuestionSet1 from './QuestionSet1.json';
 import React, { useState } from 'react';
 import { Rating } from 'react-simple-star-rating'
 
+var arr = [];
+for (let i = 0; i < QuestionSet1.length; i++) {
+
+    arr.push('Wrong');
+}
+var arr2 = [];
+for (let i = 0; i < QuestionSet1.length; i++) {
+
+    arr2.push(' ' + (i + 1));
+}
+
 
 
 function Set1() {
@@ -14,11 +25,16 @@ function Set1() {
     const [star, setStar] = useState(0)
 
 
+
+
+
+
+
     const starHandler = (rate: number) => {
         setStar(rate)
 
     }
-    
+
 
     const nextClick = () => {
 
@@ -58,6 +74,7 @@ function Set1() {
         if (QuestionSet1[count].answers[0] == QuestionSet1[count].correct) {
 
             setScore(score + 1);
+            arr[count] = 'Correct';
         }
         nextClick();
 
@@ -69,14 +86,18 @@ function Set1() {
             console.log("working" + score);
             setScore(score + 1);
             console.log("working" + score);
+            arr[count] = 'Correct';
         }
+        console.log(arr[count]);
         nextClick();
+
     }
     const cClick = () => {
 
         if (QuestionSet1[count].answers[2] == QuestionSet1[count].correct) {
 
             setScore(score + 1);
+            arr[count] = 'Correct';
         }
         nextClick();
 
@@ -87,6 +108,7 @@ function Set1() {
         if (QuestionSet1[count].answers[3] == QuestionSet1[count].correct) {
 
             setScore(score + 1);
+            arr[count] = 'Correct';
         }
         nextClick();
     }
@@ -95,6 +117,8 @@ function Set1() {
 
         window.location.href = '/menu';
     }
+
+
     if (count < QuestionSet1.length) {
         return (
 
@@ -122,9 +146,18 @@ function Set1() {
         if (score / QuestionSet1.length < 0.5) {
 
             return (
+           
                 <div>
+                    
+                    <div id="menu" >
+                        {arr.map(user => (
+                            <p>{user}</p>
+                        ))}
 
-                    <p >You have failed the quiz, please try again. </p>
+
+                    </div>
+                    <br></br>
+                    <p >Please revise and try again. </p>
                     <p>Final Score is {score} out of {QuestionSet1.length} </p>
                     <br></br>
                     <div className='App'>
@@ -132,6 +165,7 @@ function Set1() {
                         <Rating onClick={starHandler} ratingValue={star} />
                     </div>
                     <br></br>
+
                     <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
                 </div>
             )
@@ -140,7 +174,14 @@ function Set1() {
 
             return (
                 <div>
+                    <div id="menu" >
+                        {arr.map(user => (
+                            <p>{user}</p>
+                        ))}
 
+
+                    </div>
+                    <br></br>
                     <p >Congratulations. You have passed the quiz </p>
                     <p>Final Score is {score} out of {QuestionSet1.length} </p>
                     <br></br>
