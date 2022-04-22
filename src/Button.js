@@ -19,7 +19,7 @@ function Button() {
   return (
     <div class="buttons is-centered">
      <button class="button" onClick={Click}>Start </button>
-     <button class="button">Admin </button>
+     {/* <button class="button">Admin </button> */}
 
     </div>
   );
