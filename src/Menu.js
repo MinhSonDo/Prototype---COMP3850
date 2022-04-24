@@ -1,10 +1,11 @@
 
 import './App.css';
 import Wheel from './components/wheel';
+import temp from './components/wheel';
 
 
 const setClick1 =()=> {
-
+  
   window.location.href='/set1';
 
 }
@@ -16,6 +17,12 @@ const setClick2 =()=> {
 const setClick3 =()=> {
 
   window.location.href='/set3';
+
+}
+
+const random =()=> {
+  
+  window.location.href='/set1';
 
 }
 
@@ -34,7 +41,7 @@ function Menu() {
     </div>
     <p>Randomizer</p>
   
-    <Wheel items={places} />
+    <Wheel  items={places} />
     </div> 
          
   );

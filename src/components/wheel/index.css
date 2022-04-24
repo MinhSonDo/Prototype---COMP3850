@@ -140,3 +140,9 @@
   /* profondeur du triangle = du centre de la roue à la bordure = 300px / 2 */
   border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
 }
+
+.random{
+
+  margin-top:1em;
+  padding:auto;
+}
