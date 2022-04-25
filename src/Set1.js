@@ -5,6 +5,7 @@ import QuestionSet1 from './QuestionSet1.json';
 import React, { useState } from 'react';
 import { Rating } from 'react-simple-star-rating'
 
+
 var arr = [];
 for (let i = 0; i < QuestionSet1.length; i++) {
 
@@ -25,7 +26,7 @@ function Set1() {
     const [star, setStar] = useState(0)
 
 
-
+  
 
 
 
@@ -146,9 +147,9 @@ function Set1() {
         if (score / QuestionSet1.length < 0.5) {
 
             return (
-           
+
                 <div>
-                    
+
                     <div id="menu" >
                         {arr.map(user => (
                             <p>{user}</p>
@@ -164,6 +165,7 @@ function Set1() {
                         <p>How accurate do you think this quiz has tested your research ability out of 5?</p>
                         <Rating onClick={starHandler} ratingValue={star} />
                     </div>
+                   
                     <br></br>
 
                     <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
@@ -189,6 +191,7 @@ function Set1() {
                         <p>How accurate do you think this quiz has tested your research ability out of 5?</p>
                         <Rating onClick={starHandler} ratingValue={star} />
                     </div>
+                
                     <br></br>
 
                     <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
