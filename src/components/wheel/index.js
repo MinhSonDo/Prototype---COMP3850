@@ -68,7 +68,7 @@ export default class Wheel extends React.Component {
      
       </div>
     <div className="random">
-      <button onClick={random}> Go</button>
+      <button class="button" onClick={random}> Go</button>
       </div>
       </div>
     );
