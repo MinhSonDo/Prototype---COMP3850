@@ -1,10 +1,8 @@
 import './App.css';
 
 const LoginClick = () => {
-  
-    window.location.href='/';
-  
-  }
+    window.location.href='/adminPage';
+}
 
 function Login() {
     return (
