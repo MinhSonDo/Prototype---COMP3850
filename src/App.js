@@ -7,6 +7,7 @@ import Set1 from './Set1';
 import Set2 from './Set2';
 import Set3 from './Set3';
 import Login from './Login';
+import AdminPage from './AdminPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Button />} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/adminPage" element={<AdminPage/>} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/set1" element={<Set1 />} />
             <Route path="/set2" element={<Set2 />} />
