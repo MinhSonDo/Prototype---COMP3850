@@ -26,7 +26,7 @@ function Set1() {
     const [star, setStar] = useState(0)
 
 
-  
+
 
 
 
@@ -134,8 +134,8 @@ function Set1() {
                 </div>
 
                 <div class="buttons is-centered">
-                    <button class="button is-success is-light" onClick={nextClick}> {text}</button>
                     <button class="button is-success is-light" onClick={prevClick}> Previous</button>
+                    <button class="button is-success is-light" onClick={nextClick}> {text}</button>
                 </div>
 
             </div>
@@ -165,7 +165,7 @@ function Set1() {
                         <p>How accurate do you think this quiz has tested your research ability out of 5?</p>
                         <Rating onClick={starHandler} ratingValue={star} />
                     </div>
-                   
+
                     <br></br>
 
                     <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
@@ -191,7 +191,7 @@ function Set1() {
                         <p>How accurate do you think this quiz has tested your research ability out of 5?</p>
                         <Rating onClick={starHandler} ratingValue={star} />
                     </div>
-                
+
                     <br></br>
 
                     <p> <button class="button is-success is-light" onClick={returnToMenu}>Return to Menu  </button></p>
