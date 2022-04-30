@@ -7,13 +7,13 @@ import Set1 from './Set1';
 import Set2 from './Set2';
 import Set3 from './Set3';
 import Login from './Login';
-<<<<<<< HEAD
+
 import AdminPage from './AdminPage';
-=======
+
 import Question1 from './Question1';
 import Question2 from './Question2';
 import Question3 from './Question3';
->>>>>>> MinhSon
+
 
 function App() {
   return (
