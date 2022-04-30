@@ -7,6 +7,9 @@ import Set1 from './Set1';
 import Set2 from './Set2';
 import Set3 from './Set3';
 import Login from './Login';
+import Question1 from './Question1';
+import Question2 from './Question2';
+import Question3 from './Question3';
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
             <Route path="/set1" element={<Set1 />} />
             <Route path="/set2" element={<Set2 />} />
             <Route path="/set3" element={<Set3 />} />
+            <Route path="/Question1" element={<Question1 />} />
+            <Route path="/Question2" element={<Question2 />} />
+            <Route path="/Question3" element={<Question3 />} />
 
           </Routes>
         </header>
