@@ -29,12 +29,6 @@ const Set1 = () => {
 		window.location.href = '/menu'
 	}
 
-	console.log(quizNums, 'total quiz')
-
-	useEffect(() => {
-		console.log(scoreBoard)
-	}, [scoreBoard])
-
 	const selectAnswersHandler = (answer, correct) => {
 		if (answer === correct) {
 			setScoreBoard({
@@ -150,7 +144,12 @@ const Set1 = () => {
 		)
 	}
 
-	return <div>{isInProgress ? renderQuestionBank() : renderResult()}</div>
+	return (
+		<div>
+			<header>{`Total quiz: ${quizNums}`}</header>
+			{isInProgress ? renderQuestionBank() : renderResult()}
+		</div>
+	)
 }
 
 export default Set1
