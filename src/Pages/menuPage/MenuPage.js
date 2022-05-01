@@ -21,7 +21,7 @@ const places = ['Set1', 'Set2', 'Set3']
 function Menu() {
 	return (
 		<div>
-			<div className="buttons has-addons is-centered">
+			{/* <div className="buttons has-addons is-centered">
 				<button className="button" onClick={setClick1}>
 					{' '}
 					Set 1
@@ -34,7 +34,7 @@ function Menu() {
 					{' '}
 					Set 3
 				</button>
-			</div>
+			</div> */}
 			<p>Randomizer</p>
 
 			<Wheel items={places} />

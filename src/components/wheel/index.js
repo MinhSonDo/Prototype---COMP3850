@@ -4,10 +4,11 @@ import './index.css'
 
 export let temp = null
 const random = () => {
-	console.log(temp)
-	if (temp == 0) window.location.href = '/set1'
-	if (temp == 1) window.location.href = '/set2'
-	if (temp == 2) window.location.href = '/set3'
+	window.location.href = '/set1'
+	// console.log(temp)
+	// if (temp == 0) window.location.href = '/set1'
+	// if (temp == 1) window.location.href = '/set2'
+	// if (temp == 2) window.location.href = '/set3'
 }
 export default class Wheel extends React.Component {
 	constructor(props) {
