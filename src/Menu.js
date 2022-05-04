@@ -26,7 +26,7 @@ const random =()=> {
 
 }
 
-const places = ['Set1', 'Set2', 'Set3'];
+const places = ['Set1','Set2', 'Set3'];
 
 function Menu() {
   return (
