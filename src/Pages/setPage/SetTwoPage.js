@@ -1,3 +1,5 @@
+//https://www.npmjs.com/package/react-star-ratings
+
 import { questionSet2 as QuestionSet2 } from '../../static/questionMock'
 import React, { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
