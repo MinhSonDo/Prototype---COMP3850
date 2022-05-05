@@ -4,7 +4,7 @@ import QuestionSet2 from './QuestionSet2.json';
 import React, { useState } from 'react';
 
 
-function gr( minimum = 0, maximum = QuestionSet3.length) {
+function gr( minimum = 0, maximum = QuestionSet2.length) {
 
 
     let dif = maximum - minimum;
