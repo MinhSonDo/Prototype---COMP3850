@@ -1,0 +1,22 @@
+{
+    "admins": [
+        {
+            "id": "0",
+            "name": "Sam Ove",
+            "username": "Sam",
+            "password": "sam123"
+        },
+        {
+            "id": "1",
+            "name": "Anna Rain",
+            "username": "Anna",
+            "password": "anna123"
+        },
+        {
+            "id": "2",
+            "name": "Olivia Chan",
+            "username": "Olivia",
+            "password": "olivia123"
+        }
+    ]
+}
