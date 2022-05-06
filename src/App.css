@@ -1,5 +1,6 @@
 
 /* inspired https://www.freecodecamp.org/news/numbering-with-css-counters/ */
+/* https://codesandbox.io/s/github/hadriengerard/spinning-wheel-game-react?file=/src/index.js:205-289 */
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 body{
     margin:20%;

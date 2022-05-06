@@ -1,25 +1,23 @@
 
-
+// https://stackoverflow.com/questions/4959975/generate-randomom-number-between-two-numbers-in-javascript
 import QuestionSet2 from './QuestionSet2.json';
 import React, { useState } from 'react';
-import { Rating } from 'react-simple-star-rating'
 
-function generateRandom(min = 0, max = QuestionSet2.length) {
 
-    // find diff
-    let difference = max - min;
+function gr( minimum = 0, maximum = QuestionSet2.length) {
 
-    // generate random number 
-    let rand = Math.random();
 
-    // multiply with difference 
-    rand = Math.floor( rand * difference);
+    let dif = maximum - minimum;
 
-    // add with min value 
-    rand = rand + min;
 
-    return rand;
+    random = Math.floor( Math.random() * dif);
+
+
+   
+
+    return random;
 }
+
 
 
 
@@ -27,7 +25,7 @@ function generateRandom(min = 0, max = QuestionSet2.length) {
 function Question2() {
 
 
-     let temp = generateRandom();
+     let temp = gr();
 
      console.log(temp);
  
