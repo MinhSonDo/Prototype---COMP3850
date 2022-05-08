@@ -1,0 +1,22 @@
+{
+    "Set3": [
+        {
+            "id": "0",
+            "question": "q3[a]",
+            "answers": ["ac", "b", "ccc3", "da"],
+            "correct": "b"
+        },
+        {
+            "id": "1",
+            "question": "q3[b]",
+            "answers": ["a", "bb", "cb", "db"],
+            "correct": "a"
+        },
+        {
+            "id": "2",
+            "question": "q3[c]",
+            "answers": ["a", "b", "c", "d"],
+            "correct": "c"
+        }
+    ]
+}
