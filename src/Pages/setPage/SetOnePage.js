@@ -1,13 +1,70 @@
 import React, { useEffect, useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
+import Set1Service from '../../components/services/GetSet1'
+import Set2Service from '../../components/services/GetSet2'
+import Set3Service from '../../components/services/GetSet3'
+// import {
+// 	questionSet1,
+// 	questionSet2,
+// 	questionSet3
+// } from '../../static/questionMock'
 
-import {
-	questionSet1,
-	questionSet2,
-	questionSet3
-} from '../../static/questionMock'
+
+
+
+
 
 const Set1 = () => {
+	const [questionSet1, setquestionSet1] = useState(null)
+    const [questionSet2, setquestionSet2] = useState(null)
+	const [questionSet3, setquestionSet3] = useState(null)
+  
+	useEffect(() => {
+	console.log('effect')
+	Set1Service
+		.getSet1()
+		.then(set1 => {
+			setquestionSet1(set1)
+			console.log(set1)
+		})
+		.catch(error => {
+			console.log("Error:", error.response.data)
+		})
+
+	})
+
+
+   
+
+
+	useEffect(() => {
+	Set2Service
+		.getSet2()
+		.then(set2 => {
+			setquestionSet2(set2)
+			console.log(set2)
+		})
+		.catch(error => {
+			console.log("Error:", error.response.data)
+		})
+
+	})
+
+	useEffect(() => {
+	console.log('effect')
+	Set3Service
+		.getSet3()
+		.then(set3 => {
+			setquestionSet3(set3)
+			console.log(set3)
+		})
+		.catch(error => {
+			console.log("Error:", error.response.data)
+		})
+	})
+	
+	
+
 	const totalQuizLength =
 		questionSet1.length + questionSet2.length + questionSet3.length
 	const [isInProgress, setIsInProgress] = useState(true)
