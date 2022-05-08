@@ -31,6 +31,6 @@ Set2Schema.set('toJSON', {
   }
 })
 
-const Set2 = mongoose.model("Set2", set2Schema)
+const Set2 = mongoose.model("Set2", Set2Schema)
 
 module.exports = Set2
