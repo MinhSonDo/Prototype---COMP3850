@@ -3,70 +3,11 @@ import { Rating } from 'react-simple-star-rating'
 import Set1Service from '../../components/services/GetSet1'
 import Set2Service from '../../components/services/GetSet2'
 import Set3Service from '../../components/services/GetSet3'
-// import {
-// 	questionSet1,
-// 	questionSet2,
-// 	questionSet3
-// } from '../../static/questionMock'
-
-
-
-
-
 
 const Set1 = () => {
-	const [questionSet1, setquestionSet1] = useState(null)
-    const [questionSet2, setquestionSet2] = useState(null)
-	const [questionSet3, setquestionSet3] = useState(null)
-  
-	useEffect(() => {
-	console.log('effect')
-	Set1Service
-		.getSet1()
-		.then(set1 => {
-			setquestionSet1(set1)
-			console.log(set1)
-		})
-		.catch(error => {
-			console.log("Error:", error.response.data)
-		})
-
-	})
-
-
-   
-
-
-	useEffect(() => {
-	Set2Service
-		.getSet2()
-		.then(set2 => {
-			setquestionSet2(set2)
-			console.log(set2)
-		})
-		.catch(error => {
-			console.log("Error:", error.response.data)
-		})
-
-	})
-
-	useEffect(() => {
-	console.log('effect')
-	Set3Service
-		.getSet3()
-		.then(set3 => {
-			setquestionSet3(set3)
-			console.log(set3)
-		})
-		.catch(error => {
-			console.log("Error:", error.response.data)
-		})
-	})
-	
-	
-
-	const totalQuizLength =
-		questionSet1.length + questionSet2.length + questionSet3.length
+	const [questionSet1, setquestionSet1] = useState([])
+	const [questionSet2, setquestionSet2] = useState([])
+	const [questionSet3, setquestionSet3] = useState([])
 	const [isInProgress, setIsInProgress] = useState(true)
 	const [count, counter] = useState(0)
 	const [scoreBoard, setScoreBoard] = useState({
@@ -74,9 +15,23 @@ const Set1 = () => {
 		wrong: 0
 	})
 	const [star, setStar] = useState(0)
-	const [quizNums, setQuizNums] = useState(
-		Math.floor(Math.random() * totalQuizLength + 1)
-	)
+	const [quizNums, setQuizNums] = useState(0)
+	const fetchQuestion = () => {
+		const q1 = Set1Service.getSet1()
+		const q2 = Set2Service.getSet2()
+		const q3 = Set3Service.getSet3()
+		Promise.all([q1, q2, q3]).then(res => {
+			const length = res[0].length + res[1].length + res[2].length
+			setquestionSet1(res[0])
+			setquestionSet2(res[1])
+			setquestionSet3(res[2])
+			setQuizNums(Math.floor(Math.random() * length + 1))
+		})
+	}
+
+	useEffect(() => {
+		fetchQuestion()
+	}, [])
 
 	const starHandler = rate => {
 		setStar(rate)
@@ -118,20 +73,22 @@ const Set1 = () => {
 
 	const renderQuestionBank = () => {
 		const quizSets = questionBankGenerator()
-		let { question, answers, correct } = quizSets[count]
-		return (
-			<div>
-				<p className="title"> {question}</p>
-				{answers.map(answer => (
-					<button
-						className="button"
-						onClick={() => selectAnswersHandler(answer, correct)}
-					>
-						{answer}
-					</button>
-				))}
-			</div>
-		)
+		if (quizSets.length > 0) {
+			let { question, answers, correct } = quizSets[count]
+			return (
+				<div>
+					<p className="title"> {question}</p>
+					{answers.map(answer => (
+						<button
+							className="button"
+							onClick={() => selectAnswersHandler(answer, correct)}
+						>
+							{answer}
+						</button>
+					))}
+				</div>
+			)
+		}
 	}
 
 	const renderResult = () => {
