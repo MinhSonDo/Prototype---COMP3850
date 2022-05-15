@@ -22,6 +22,7 @@ const Set1 = () => {
 		const q3 = Set3Service.getSet3()
 		Promise.all([q1, q2, q3]).then(res => {
 			const length = res[0].length + res[1].length + res[2].length
+			console.log(res[0])
 			setquestionSet1(res[0])
 			setquestionSet2(res[1])
 			setquestionSet3(res[2])

@@ -13,6 +13,7 @@ const CurrentQuestionPage = React.lazy(() =>
 	import('./Pages/currentQuestionPage/currentQuestionPage.js')
 )
 const MenuPage = React.lazy(() => import('./Pages/menuPage/MenuPage.js'))
+const Question1 = React.lazy(() => import('./Pages/QuestionPages/Question1.js'))
 
 const routes = [
 	{
@@ -51,6 +52,10 @@ const routes = [
 	{
 		path: '/menu',
 		element: <MenuPage />
+	},
+	{
+		path: '/question1',
+		element: <Question1 />
 	}
 ]
 
