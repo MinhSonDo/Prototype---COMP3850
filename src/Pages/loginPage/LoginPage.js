@@ -1,5 +1,6 @@
 import React from 'react'
-
+import login from '../../components/services/Login'
+import logout from '../../components/services/Login'
 const LoginClick = () => {
 	window.location.href = '/adminPage'
 }
