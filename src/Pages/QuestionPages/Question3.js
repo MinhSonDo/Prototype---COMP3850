@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import createQ1 from '../../components/services/createQuestion1'
 import './question1.css'
 
-const Question1 = () => {
+const Question3 = () => {
 	const [q1, setQ1] = useState('')
 	const [q2, setQ2] = useState('')
 	const [q3, setQ3] = useState('')
@@ -25,7 +25,7 @@ const Question1 = () => {
 		const answer = [q1, q2, q3, q4]
 		const question = questionOne
 		question.answers = answer
-		const create = await createQ1.createQ1(question)
+		const create = await createQ1.createQ3(question)
 		console.log(create)
 	}
 
@@ -70,4 +70,4 @@ const Question1 = () => {
 	)
 }
 
-export default Question1
+export default Question3
