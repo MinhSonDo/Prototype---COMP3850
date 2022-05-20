@@ -6,8 +6,13 @@ const CreateQuestionPage = () => {
 			<button onClick={() => (window.location.href = '/question1')}>
 				Set1 "Multiple Choice"
 			</button>
-			<button>Set2</button>
-			<button>Set3</button>
+			<button onClick={() => (window.location.href = '/question2')}>
+				Set2
+			</button>
+			<button onClick={() => (window.location.href = '/question3')}>
+				{' '}
+				Set3
+			</button>
 		</>
 	)
 }
