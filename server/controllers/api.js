@@ -55,35 +55,6 @@ apiRouter.get('/api/set3', (request, response) => {
 	})
 })
 
-//log user in. verifies the password and send back a user token
-apiRouter.post('/api/login', async (request, response) => {
-	const { username, password } = request.body
-	let admin
-	await Admin.find({ username: username }).then(result => {
-		console.log('get users: ' + JSON.stringify(result))
-		user = JSON.parse(JSON.stringify(result))[0]
-		console.log(admin)
-	})
-
-	if (admin == [] || !admin) {
-		return response.status(401).json({ error: 'invalid name or password' })
-	} else if (await bcrypt.compare(password, admin.password)) {
-		console.log('Password is good!')
-		bcrypt.compare(password, admin.password)
-
-		const adminForToken = {
-			id: admin.id,
-			name: admin.name
-		}
-
-		const token = jwt.sign(adminForToken, SECRET)
-
-		return response.status(200).json({ token, name: admin.name })
-	} else {
-		return response.status(401).json({ error: 'invalid name or password' })
-	}
-})
-
 apiRouter.post('/api/create1', async (req, res) => {
 	const { question1 } = req.body
 	const { _id } = await Set1.create({ ...question1 })
@@ -113,8 +84,38 @@ apiRouter.post('/api/create3', async (req, res) => {
 		res.status(500).json('internal system error')
 	}
 })
+
+//log user in. verifies the password and send back a user token
+apiRouter.post('/api/login', async (request, response) => {
+	const { username, password } = request.body
+	let admin
+	await Admin.find({ username: username }).then(result => {
+		console.log('get users: ' + JSON.stringify(result))
+		user = JSON.parse(JSON.stringify(result))[0]
+		console.log(admin)
+	})
+
+	if (admin == [] || !admin) {
+		return response.status(401).json({ error: 'invalid name or password' })
+	} else if (await bcrypt.compare(password, admin.password)) {
+		console.log('Password is good!')
+		bcrypt.compare(password, admin.password)
+
+		const adminForToken = {
+			id: admin.id,
+			name: admin.name
+		}
+
+		const token = jwt.sign(adminForToken, SECRET)
+
+		return response.status(200).json({ token, name: admin.name })
+	} else {
+		return response.status(401).json({ error: 'invalid name or password' })
+	}
+})
+
 //verify user to logout
-apiRouter.post('/api/', (request, response) => {
+apiRouter.post('/api/logout', (request, response) => {
 	const token = getTokenFrom(request)
 	let decodedToken = null
 	try {
