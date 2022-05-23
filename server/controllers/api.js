@@ -6,7 +6,7 @@ const rawAdminsData = fs.readFileSync('server/adminData.json')
 const rawSet1Data = fs.readFileSync('server/Set1.json')
 const rawSet2Data = fs.readFileSync('server/Set2.json')
 const rawSet3Data = fs.readFileSync('server/Set3.json')
-const Admin = require('../models/admins')
+const Admins = require('../models/admins')
 const Set1 = require('../models/Set1')
 const Set2 = require('../models/Set2')
 const Set3 = require('../models/Set3')
@@ -89,7 +89,8 @@ apiRouter.post('/api/create3', async (req, res) => {
 apiRouter.post('/api/login', async (request, response) => {
 	const { username, password } = request.body
 	let admin
-	await Admin.find({ username: username }).then(result => {
+	await Admins.find({ username: username })
+	.then(result => {
 		console.log('get users: ' + JSON.stringify(result))
 		user = JSON.parse(JSON.stringify(result))[0]
 		console.log(admin)

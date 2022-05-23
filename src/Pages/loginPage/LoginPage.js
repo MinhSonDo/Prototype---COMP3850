@@ -43,7 +43,7 @@ const Login = ({user, setUser}) => {
 
     const formHandler = (event) => {
       event.preventDefault()
-	  window.location.href = '/adminPage'
+      window.location.href = '/adminPage'
 
       loginService.login({username, password})
         .then(data => {
