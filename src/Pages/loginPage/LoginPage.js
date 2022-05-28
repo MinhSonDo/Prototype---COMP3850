@@ -35,7 +35,7 @@ id 1: anna123
 id 2: olivia123
 */
 
-const Login = ({user, setUser}) => {
+const Login = ({admin, setAdmin}) => {
 
     const [username, setusername] = useState('')
     const [password, setPassword] = useState('')
@@ -48,7 +48,7 @@ const Login = ({user, setUser}) => {
       loginService.login({username, password})
         .then(data => {
             console.log("Success:", data)
-            setUser(data)
+            setAdmin(data)
             setLoginError('')
         }
         )
@@ -70,20 +70,20 @@ const Login = ({user, setUser}) => {
     const logoutHandler = (event) => {
         event.preventDefault()
 
-        loginService.logout({user})
+        loginService.logout({admin})
             .then(data => {
                 console.log("Success: " + data.name + " logged out!")
-                setUser(null)
+                setAdmin(null)
             })
             .catch(error => {
                 console.log("Error:", error.response.data)
             })
     }
 
-    if (user) {
+    if (admin) {
         return (
             <div>
-                <p>Logged in {user.name}</p>
+                <p>Logged in {admin.name}</p>
                 <form onSubmit = {logoutHandler}>
                     <div>
                         <input type="submit" value="Log Out"/>

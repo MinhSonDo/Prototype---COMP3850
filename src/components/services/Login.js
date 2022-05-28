@@ -17,12 +17,12 @@ const baseURL = "/api/"
  * @param {Object} param0 {user} this is a user object with user name and token
  * @returns {Promise} Promise that will resolve to the response data
  */
-const logout = ({user}) => {
-    if(!user) {
+const logout = ({admin}) => {
+    if(!admin) {
         return new Promise(() => null)
     }
-    const config = {headers: {Authorization: "Bearer " + user.token}}
-    return axios.post(baseURL + "logout", user, config)
+    const config = {headers: {Authorization: "Bearer " + admin.token}}
+    return axios.post(baseURL + "logout", admin, config)
                 .then(response => response.data)
 }
 
