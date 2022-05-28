@@ -92,7 +92,7 @@ apiRouter.post('/api/login', async (request, response) => {
 	await Admins.find({ username: username })
 	.then(result => {
 		console.log('get users: ' + JSON.stringify(result))
-		user = JSON.parse(JSON.stringify(result))[0]
+		admin = JSON.parse(JSON.stringify(result))[0]
 		console.log(admin)
 	})
 
