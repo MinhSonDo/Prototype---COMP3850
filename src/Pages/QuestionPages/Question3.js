@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import createQ1 from '../../components/services/createQuestion1'
 import './question1.css'
 
@@ -7,7 +7,7 @@ const Question3 = () => {
 	const [q2, setQ2] = useState('')
 	const [q3, setQ3] = useState('')
 	const [q4, setQ4] = useState('')
-	const [answer, setAnswer] = useState(['', '', '', ''])
+
 	const [questionOne, setQuestionOne] = useState({
 		question: '',
 		correct: '',
