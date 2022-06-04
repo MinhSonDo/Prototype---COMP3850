@@ -94,9 +94,9 @@ const Set1 = () => {
 
 	const renderResult = () => {
 		const isFailed = scoreBoard.correct / quizNums < 0.5
-		{
+		
 			return isFailed ? renderFailed() : renderAllPass()
-		}
+		
 	}
 
 	const renderAllPass = () => {
