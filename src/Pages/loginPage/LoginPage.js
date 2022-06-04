@@ -1,40 +1,6 @@
 import React, {useState} from 'react'
 import loginService from '../../components/services/Login'
 
-// const LoginClick = () => {
-// 	window.location.href = '/adminPage'
-// }
-
-// function Login() {
-// 	return (
-// 		<div>
-// 			<div>
-// 				<span> Admin's Username: </span>
-// 				<input type="text" />
-// 			</div>
-
-// 			<div>
-// 				<span> Admin's Password: </span>
-// 				<input type="password" />
-// 			</div>
-
-// 			<button className="button" onClick={LoginClick}>
-// 				{' '}
-// 				Login{' '}
-// 			</button>
-// 		</div>
-// 	)
-// }
-
-// export default Login
-
-/*
-Login passwords are:
-id 0: sam123
-id 1: anna123
-id 2: olivia123
-*/
-
 const Login = ({admin, setAdmin}) => {
 
     const [username, setusername] = useState('')
