@@ -6,7 +6,7 @@ const Login = () => {
 
 const Click = () => {
 	if (window.confirm('Do you want to do a tutorial?')) {
-		window.location.href = '/okPressed'
+		window.location.href = '/tutorial'
 	} else {
 		window.location.href = '/menu'
 	}

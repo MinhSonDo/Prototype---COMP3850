@@ -3,6 +3,7 @@ import React from 'react'
 const AdminPage = React.lazy(() => import('./Pages/adminPage/AdminPage.js'))
 const HomePage = React.lazy(() => import('./Pages/homePage/HomePage.js'))
 const LoginPage = React.lazy(() => import('./Pages/loginPage/LoginPage.js'))
+const TutorialPage = React.lazy(() => import('./Pages/tutorialPage/TutorialPage.js'))
 const Set1Page = React.lazy(() => import('./Pages/setPage/SetOnePage.js'))
 const Set2Page = React.lazy(() => import('./Pages/setPage/SetTwoPage.js'))
 const Set3Page = React.lazy(() => import('./Pages/setPage/SetThreePage.js'))
@@ -30,6 +31,10 @@ const routes = [
 	{
 		path: '/adminPage',
 		element: <AdminPage />
+	},
+	{
+		path: '/tutorial',
+		element: <TutorialPage />
 	},
 	{
 		path: '/set1',
