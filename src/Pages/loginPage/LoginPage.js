@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import loginService from '../../components/services/Login'
 
 const Login = ({admin, setAdmin}) => {
@@ -9,7 +10,6 @@ const Login = ({admin, setAdmin}) => {
 
     const formHandler = (event) => {
       event.preventDefault()
-      window.location.href = '/adminPage'
 
       loginService.login({username, password})
         .then(data => {
@@ -71,9 +71,11 @@ const Login = ({admin, setAdmin}) => {
                             <label htmlFor="password"> Password: </label>
                             <input id="password" name="password" type="password" placeholder="Your password..." onChange={e => setPassword(e.target.value)} />
                         </div>
-                        <div>
-                            <input type="submit" value="Login"/>
-                        </div>
+                        <Link to="/adminPage">
+                            <div>
+                                <input type="submit" value="Login"/>
+                            </div>
+                        </Link>
                     </div>
                 </form> 
                 <div>

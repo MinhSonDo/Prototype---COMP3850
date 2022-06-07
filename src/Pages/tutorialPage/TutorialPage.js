@@ -1,8 +1,5 @@
 import React from 'react'
-
-const ReturnClick = () => {
-	window.location.href = '/'
-}
+import { Link } from 'react-router-dom'
 
 function Tutorial() {
 	return (
@@ -16,7 +13,9 @@ function Tutorial() {
 
             <p> Thank you! </p>
 
-            <button onClick={ReturnClick}> Return To Main Page </button>
+            <Link to="/">
+                  <button> Return To Main Page </button>
+            </Link>
 		</div>
 	)
 }
