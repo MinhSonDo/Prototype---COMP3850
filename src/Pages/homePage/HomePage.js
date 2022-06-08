@@ -1,5 +1,5 @@
 // import Menu from '../menuPage/MenuPage'
-import { Link } from 'react-router-dom'
+import { Link, RouterPrompt } from 'react-router-dom'
 
 
 
@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom'
 function Button() {
 
 	return (
+
 		<div className="buttons is-centered">
+
+
 			<Link to="/login">
 				<button className="button"> Log In </button>
 			</Link>
