@@ -1,4 +1,4 @@
-//https://codesandbox.io/s/github/hadriengerard/spinning-wheel-game-react?file=/src/index.js:205-289
+ 
 
 import React from 'react'
 
