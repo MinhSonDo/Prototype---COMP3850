@@ -3,7 +3,7 @@ import { Rating } from 'react-simple-star-rating'
 import Set1Service from '../../components/services/GetSet1'
 import Set2Service from '../../components/services/GetSet2'
 import Set3Service from '../../components/services/GetSet3'
-
+import { Link } from 'react-router-dom'
 const Set1 = () => {
 	const [questionSet1, setquestionSet1] = useState([])
 	const [questionSet2, setquestionSet2] = useState([])
@@ -121,9 +121,12 @@ const Set1 = () => {
 
 				<p>
 					{' '}
-					<button className="button is-success is-light" onClick={returnToMenu}>
+					{/* <button className="button is-success is-light" onClick={returnToMenu}>
 						Return to Menu{' '}
-					</button>
+					</button> */}
+			<Link to="/menu">
+				<button className="button"> Return to Menu </button>
+			</Link>
 				</p>
 			</div>
 		)
@@ -151,9 +154,9 @@ const Set1 = () => {
 
 				<p>
 					{' '}
-					<button className="button is-success is-light" onClick={returnToMenu}>
-						Return to Menu{' '}
-					</button>
+					<Link to="/menu">
+				<button className="button"> Return to Menu </button>
+			</Link>
 				</p>
 			</div>
 		)

@@ -1,7 +1,7 @@
- 
+ //https://codesandbox.io/s/github/hadriengerard/spinning-wheel-game-react?file=/src/index.js:205-289
 
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import './index.css'
 
 export let temp = null
@@ -68,10 +68,14 @@ export default class Wheel extends React.Component {
 						</div>
 					</div>
 					<div className="random">
-						<button className="button" onClick={random}>
+						{/* <button className="button" onClick={random}>
 							{' '}
 							Go
-						</button>
+						</button> */}
+
+                       <Link to="/set1">
+				<button className="button"> Go </button>
+			</Link>
 					</div>
 				</div>
 			)
