@@ -1,29 +1,30 @@
 // import Menu from '../menuPage/MenuPage'
+import { Link } from 'react-router-dom'
 
-const Login = () => {
-	window.location.href = '/login'
-}
 
-const Click = () => {
-	if (window.confirm('Do you want to do a tutorial?')) {
-		window.location.href = '/tutorial'
-	} else {
-		window.location.href = '/menu'
-	}
-}
+
+
 function Button() {
+
 	return (
 		<div className="buttons is-centered">
-			<button className="button" onClick={Click}>
-				Start{' '}
-			</button>
-			<button className="button" onClick={Login}>
-				{' '}
-				Log In{' '}
-			</button>
-			{/* <button class="button">Admin </button> */}
+			<Link to="/login">
+				<button className="button"> Log In </button>
+			</Link>
+			<Link to="/menu">
+				<button className="button"> Start</button>
+			</Link>
+
+
 		</div>
 	)
+
+
+
+
+
+
+
 }
 
 export default Button
